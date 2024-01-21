@@ -55,7 +55,7 @@ function App() {
     );
     const result = await tx.wait();
     console.log(result);
-    setReceipt(result);
+    setReceipt(result.hash);
   };
 
   return (
@@ -103,9 +103,9 @@ function App() {
           <a
             className="text-white underline"
             target="_blank"
-            href={`https://mumbai.polygonscan.com/tx/${receipt.hash}`}
+            href={`https://mumbai.polygonscan.com/tx/${receipt}`}
           >
-            {receipt.hash}
+            {receipt}
           </a>
         )}
       </section>
